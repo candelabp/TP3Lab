@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Instrumento from './components/instrumento';
+import Instrumento from './components/Instrumento';
 import { InstrumentoType } from './components/types';
 
 
