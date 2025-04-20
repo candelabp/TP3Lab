@@ -1,7 +1,7 @@
 import React from 'react';
 import { InstrumentoType } from './types';
 import '../instrumento.css';
-
+import { Link } from 'react-router-dom';
 interface Props {
   instrumento: InstrumentoType;
 }
@@ -12,6 +12,8 @@ const getImage = (imageName: string) => {
 
 const Instrumento: React.FC<Props> = ({ instrumento }) => {
   return (
+    
+   
     <div className="instrumento-container">
       <img className="instrumento-img" src={getImage(instrumento.imagen)} alt={instrumento.instrumento} />
 
@@ -27,8 +29,12 @@ const Instrumento: React.FC<Props> = ({ instrumento }) => {
         )}
 
         <p className="instrumento-vendidos">{instrumento.cantidadVendida} vendidos</p>
+        <Link to={`/detalle/${instrumento.id}`}>
+        <button className='btn-ver-detalle'>Ver Detalle</button>
+      </Link>
       </div>
     </div>
+  
   );
 };
 
